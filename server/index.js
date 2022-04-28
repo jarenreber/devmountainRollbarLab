@@ -21,8 +21,8 @@ var rollbar = new Rollbar({
 rollbar.log('Hello world!')
 
 
-app.get('/style', (req, res) => {
-    res. sendFile(path.join(__dirname, '../client/home.css'))
+app.get('/styles', (req, res) => {
+    res. sendFile(path.join(__dirname, '../client/styles.css'))
     rollbar.info('css file served')
 })
 
