@@ -3,11 +3,11 @@ const path = require('path')
 
 const app = express()
 
-// app.get("/", (req, res) => {
-//     res.sendFile(path.join(__dirname, '../client/index.html'))
-// })
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/index.html'))
+})
 
-app.use(express.static(__dirname + '../client'))
+// app.use(express.static(__dirname + '../client'))
 
 const port = process.env.PORT || 4646
 
@@ -23,10 +23,10 @@ var rollbar = new Rollbar({
 rollbar.log('Hello world!')
 
 
-// app.get('/styles', (req, res) => {
-//     res. sendFile(path.join(__dirname, '../client/styles.css'))
-//     rollbar.info('css file served')
-// })
+app.get('/styles', (req, res) => {
+    res. sendFile(path.join(__dirname, '../client/styles.css'))
+    rollbar.log('css file served')
+})
 
 app.listen(port, () => {
     console.log(`Beam me up ${4646}`)
