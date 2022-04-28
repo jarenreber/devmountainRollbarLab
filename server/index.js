@@ -21,6 +21,11 @@ var rollbar = new Rollbar({
 rollbar.log('Hello world!')
 
 
+app.get('/style', (req, res) => {
+    res. sendFile(path.join(__dirname, '../client/home.css'))
+    rollbar.info('css file served')
+})
+
 app.listen(port, () => {
     console.log(`Beam me up ${4646}`)
 })
